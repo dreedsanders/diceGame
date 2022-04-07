@@ -46,4 +46,4 @@ def playGame(p, r, n, s):
     highScore = max(finalScores)
     winner = finalScores.index(highScore)
 
-    print(finalScores, highScore, winner+1)
+    return("Final Scores", finalScores, "Player", winner+1, "is the winner!")
