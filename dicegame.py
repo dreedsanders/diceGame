@@ -1,7 +1,5 @@
 # create a simple dice game that will allow user to select number of players, how many sides on dice, and how many rounds.
 # there will be two functions; one that rolls dice, and one that plays the game.
-from collections import defaultdict
-import array
 import random
 
 
@@ -10,7 +8,6 @@ def playGame(p, r, n, s):
     # where r is the number of rounds
     # where n is number of dice
     # where s is number of sides on each die
-
     scores = []
 
     def rollDice(a, b):
@@ -35,6 +32,18 @@ def playGame(p, r, n, s):
 
         scores.append(roundScores)
 
-    
+    finalScores = [0]*p
 
-    print(scores)
+    itera = 0
+    for i in scores:
+        numb = 0
+        print("Round", {itera+1}, "scores", scores[itera])
+        for n in scores[numb]:
+            finalScores[itera] = finalScores[itera] + scores[numb][itera]
+            numb = numb+1
+        itera = itera+1
+    
+    highScore = max(finalScores)
+    winner = finalScores.index(highScore)
+
+    print(finalScores, highScore, winner+1)
